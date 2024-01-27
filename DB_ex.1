@@ -1,0 +1,9 @@
+Задание 1
+Представь: тебе нужно проверить, отображается ли созданный заказ в базе данных.
+
+SELECT "Couriers".login, COUNT("Orders".id) AS delivery_count
+FROM "Couriers"
+JOIN "Orders" ON "Couriers".id = "Orders"."courierId"
+WHERE "Orders"."inDelivery" = true
+GROUP BY "Couriers".login;
+
